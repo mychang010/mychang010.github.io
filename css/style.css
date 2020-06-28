@@ -619,6 +619,8 @@ body:after {
     transform: translateX(-50%); }
   .section-title.text-center:after {
     background: #fff; }
+  .section-title.text-center.portfolio-header:after {
+    background: #343a40; }
 
 .position-relative {
   position: relative; }
