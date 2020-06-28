@@ -390,7 +390,7 @@ body:after {
   position: fixed;
   right: 0;
   z-index: 2000;
-  padding-top: 20px;
+  /*padding-top: 20px;*/
   background: #fff;
   height: calc(100vh);
   -webkit-transform: translateX(110%);
@@ -417,7 +417,7 @@ body:after {
         font-size: 30px;
         display: inline-block;
         padding-left: 10px;
-        padding-right: 0px;
+        padding-right: 10px;
         line-height: 1;
         cursor: pointer;
         -webkit-transition: .3s all ease;
@@ -552,9 +552,9 @@ body:after {
       color: #000 !important; }
       .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a:hover, .sticky-wrapper.is-sticky .site-navbar .site-menu > li > a.active {
         color: #207561 !important; }
-  .sticky-wrapper .shrink {
-    padding-top: 10px !important;
-    padding-bottom: 10px !important; }
+/*  .sticky-wrapper .shrink {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important; }*/
 
 /* Blocks */
 .site-blocks-cover {
