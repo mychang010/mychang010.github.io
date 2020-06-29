@@ -124,12 +124,9 @@ jQuery(document).ready(function($) {
 	// navigation
 	var OnePageNavigation = function() {
 		$("body").on("click", ".main-menu li a[href^='#'], .smoothscroll[href^='#'], .site-mobile-menu .site-nav-wrap li a", function(e) {
-			e.preventDefault();
-
 			var hash = this.hash;
-
 			$('html, body').animate({
-			    'scrollTop': $(hash).offset().top - 50
+			    'scrollTop': $(hash).offset().top - 30
 			}, 600, 'easeInOutCubic', function(){
 			    window.location.hash = hash;
 			});
