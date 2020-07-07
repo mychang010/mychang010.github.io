@@ -62,7 +62,7 @@ body:after {
 
 .btn {
   font-size: 16px;
-  border-radius: 30px;
+  border-radius: 15px;
   padding: 10px 30px; }
   .btn:hover, .btn:active, .btn:focus {
     outline: none;
@@ -88,7 +88,7 @@ body:after {
 
 .form-control {
   height: 43px;
-  border-radius: 30px;
+  border-radius: 15px;
   font-family: "Arbutus Slab", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
   .form-control:active, .form-control:focus {
     border-color: #207561; }
