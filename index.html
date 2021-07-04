@@ -91,7 +91,7 @@
                 <p class="lead">An aspiring Actuary based in San Diego, CA</p>
                 <p style="display: flex; align-items: center;">
                     <a href="#about-section" class="btn smoothscroll btn-primary">About me</a>
-                    <a href="https://www.linkedin.com/in/madelineychang/" class="ml-2">
+                    <a target="__blank" href="https://www.linkedin.com/in/madelineychang/" class="ml-2">
                         <i class="fab fa-linkedin" style="font-size: 2em;"></i>
                     </a>
                 </p>
@@ -432,31 +432,44 @@
                 netlify-honeypot="bot-field"
                 data-netlify-recaptcha="true"
                 method="POST"
-                id="contactForm">
+                id="contactForm"
+                novalidate>
               <input type="hidden" name="form-name" value="contactForm">
               <div class="row mb-4">
                 <div class="form-group col-6">
-                  <input type="text" class="form-control" placeholder="First name" name="first_name">
+                  <input type="text" class="form-control" placeholder="First name" name="first_name" required>
+                  <div class="invalid-feedback">
+                      Please enter your first name.
+                  </div>
                 </div>
                 <div class="form-group col-6">
-                  <input type="text" class="form-control" placeholder="Last name" name="last_name">
+                  <input type="text" class="form-control" placeholder="Last name" name="last_name" required>
+                  <div class="invalid-feedback">
+                      Please enter your last name.
+                  </div>
                 </div>
               </div>
               <div class="row mb-4">
                 <div class="form-group col-12">
-                  <input type="email" class="form-control" placeholder="Email address" name="email">
+                  <input type="email" class="form-control" placeholder="Email address" name="email" required>
+                  <div class="invalid-feedback">
+                      Please enter a valid email address.
+                  </div>
                 </div>
               </div>
               <div class="row mb-2">
                 <div class="form-group col-12">
-                  <textarea class="form-control" rows="5" placeholder="Type your message here.." name="message"></textarea>
+                  <textarea class="form-control" rows="5" placeholder="Type your message here.." name="message" required></textarea>
+                  <div class="invalid-feedback">
+                      Please enter a message.
+                  </div>
                 </div>
               </div>
               <input hidden type="text" class="form-control" placeholder="Favorite food" name="bot-field">
               <div data-netlify-recaptcha="true"></div>
               <div class="row mt-4">
                 <div class="col-md-6">
-                    <button class="btn btn-primary" type="submit">
+                    <button class="btn btn-primary" onclick="validateInputs()" type="submit">
                         Send Message
                     </button>
                 </div>
@@ -504,7 +517,7 @@
           </div> -->
           <div class="col text-center">
             <h3 class="footer-title text-white">Connect With Me</h3>
-            <a href="https://www.linkedin.com/in/madelineychang/"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a>
+            <a target="__blank" href="https://www.linkedin.com/in/madelineychang/"><i class="fab fa-linkedin" style="font-size: 2em;"></i></a>
           </div>
         </div>
 
@@ -648,7 +661,14 @@
       "retina_detect": true
     });
 
-
+    function validateInputs() {
+        var form = $('#contactForm')[0]
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+    }
 </script>
   
   <script src="js/main.js"></script>
