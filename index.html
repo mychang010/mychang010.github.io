@@ -454,7 +454,7 @@
                 <div class="col-md-6">
                     <button class="g-recaptcha btn btn-primary"
                         data-sitekey="6LfWIXMbAAAAAO_QausAHiSPcZxCnPPl0sqMV5JN"
-                        data-callback='onSubmit'
+                        data-callback='handleFormSubmit'
                         data-action='submit'>
                         Send Message
                     </button>
@@ -652,14 +652,10 @@
       "retina_detect": true
     });
 
-  function onSubmit(token) {
-    document.getElementById("contactForm").submit();
-  }
-
 </script>
   
   <script src="js/main.js"></script>
-  <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script></script>
+  <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
     
   </body>
 </html>
