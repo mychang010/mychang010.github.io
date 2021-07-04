@@ -254,12 +254,30 @@
 
         <div class="row-sm-12">
           <div class="row mb-4 mx-2" data-aos="fade-in">
-            <div class="card flex-row flex-wrap service" style="padding: 20px">
-              <div class="col-sm-3 text-center">
-                <img class="card-img-top" src="images/scan.png" alt="" style="width: 75%">
+            <div class="card flex-row flex-wrap service" style="padding: 20px; width: 100%">
+              <div class="col-sm-3 text-center justify-content-center align-self-center">
+                <img class="card-img-top " src="images/blueshield.png" alt="" style="max-width: 200px">
               </div>
               <div class="col-sm-9 card-block p-4">
-                  <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">April 2021 - Present</h6>
+                  <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">June 2021 - Present</h6>
+                  <h4 class="card-title mb-2">Experienced Actuarial Analyst</h4>
+                  <p class="card-text mb-4"><strong>Blue Shield of California</strong></p>
+                  
+                  <ul style="padding-left: 1rem;">
+                    <li>Medicare pricing</li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+
+        <div class="row-sm-12">
+          <div class="row mb-4 mx-2" data-aos="fade-in">
+            <div class="card flex-row flex-wrap service" style="padding: 20px">
+              <div class="col-sm-3 text-center justify-content-center align-self-center">
+                <img class="card-img-top " src="images/scan.png" alt="" style="max-width: 150px">
+              </div>
+              <div class="col-sm-9 card-block p-4">
+                  <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">April 2021 - June 2021</h6>
                   <h4 class="card-title mb-2">Actuarial Analyst</h4>
                   <p class="card-text mb-4"><strong>SCAN Health Plan</strong></p>
                   
@@ -275,8 +293,8 @@
         <div class="row-sm-12">
           <div class="row mb-4 mx-2" data-aos="fade-in">
             <div class="card flex-row flex-wrap service" style="padding: 20px">
-              <div class="col-sm-3 text-center">
-                <img class="card-img-top" src="images/scan.png" alt="" style="width: 75%">
+              <div class="col-sm-3 text-center justify-content-center align-self-center">
+                <img class="card-img-top " src="images/scan.png" alt="" style="max-width: 150px">
               </div>
               <div class="col-sm-9 card-block p-4">
                   <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">March 2020 - April 2021</h6>
@@ -294,8 +312,8 @@
 
           <div class="row mb-4 mx-2" data-aos="fade-in">
             <div class="card flex-row flex-wrap service" style="padding: 20px">
-              <div class="col-sm-3 text-center">
-                <img class="card-img-top" src="images/ucsd-tlc.png" alt="" >
+              <div class="col-sm-3 text-center justify-content-center align-self-center">
+                <img class="card-img-top " src="images/ucsd-tlc.png" alt="" style="max-width: 200px">
               </div>
               <div class="col-sm-9 card-block p-4">
                   <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">July 2019 - March 2020</h6>
@@ -314,8 +332,8 @@
 
           <div class="row mb-4 mx-2" data-aos="fade-in">
             <div class="card flex-row flex-wrap service" style="padding: 20px">
-              <div class="col-sm-3 text-center">
-                <img class="card-img-top" src="images/tas.png" alt="" >
+              <div class="col-sm-3 text-center justify-content-center align-self-center">
+                <img class="card-img-top " src="images/tas.png" alt="" style="max-width: 200px">
               </div>
               <div class="col-sm-9 card-block p-4">
                   <h6 style="font-size: .9rem; color: #8B88B1" class="mb-1">July 2017 - June 2019</h6>
@@ -411,7 +429,8 @@
           <div class="col-md-9">
             <form action="https://script.google.com/macros/s/AKfycbwg53YXtQsNxRX85wYf3J6k2eWrPe-aDZuqJuyLrHITYsINd0aj/exec" 
                 class="gform" 
-                method="POST">
+                method="POST"
+                id="contactForm">
               <div class="row mb-4">
                 <div class="form-group col-6">
                   <input type="text" class="form-control" placeholder="First name" name="first_name">
@@ -430,9 +449,15 @@
                   <textarea class="form-control" rows="5" placeholder="Type your message here.." name="message"></textarea>
                 </div>
               </div>
+              <input hidden type="text" class="form-control" placeholder="Favorite food" name="honeypot">
               <div class="row mb-4">
                 <div class="col-md-6">
-                  <input type="submit" class="btn btn-primary" value="Send Message">
+                    <button class="g-recaptcha btn btn-primary"
+                        data-sitekey="6LfWIXMbAAAAAO_QausAHiSPcZxCnPPl0sqMV5JN"
+                        data-callback='onSubmit'
+                        data-action='submit'>
+                        Send Message
+                    </button>
                 </div>
               </div>
               <div style="display:none" class="row thankyou_message">
@@ -511,6 +536,7 @@
   <script src="js/jquery.easing.1.3.js"></script>
   <script src="js/aos.js"></script>
   <script src="js/jquery.sticky.js"></script>
+  <script src="https://www.google.com/recaptcha/api.js"></script>
   <!-- <script src="js/isotope.pkgd.min.js"></script> -->
   
   <script src="js/particles.min.js"></script>
@@ -625,6 +651,11 @@
       },
       "retina_detect": true
     });
+
+  function onSubmit(token) {
+    document.getElementById("contactForm").submit();
+  }
+
 </script>
   
   <script src="js/main.js"></script>
