@@ -427,10 +427,13 @@
             <h5>Let's stay in touch!</h5>
           </div>
           <div class="col-md-9">
-            <form action="https://script.google.com/macros/s/AKfycbwg53YXtQsNxRX85wYf3J6k2eWrPe-aDZuqJuyLrHITYsINd0aj/exec" 
-                class="gform" 
+            <form name="contactForm"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
+                data-netlify-recaptcha="true"
                 method="POST"
                 id="contactForm">
+              <input type="hidden" name="form-name" value="contactForm">
               <div class="row mb-4">
                 <div class="form-group col-6">
                   <input type="text" class="form-control" placeholder="First name" name="first_name">
@@ -444,26 +447,19 @@
                   <input type="email" class="form-control" placeholder="Email address" name="email">
                 </div>
               </div>
-              <div class="row mb-4">
+              <div class="row mb-2">
                 <div class="form-group col-12">
                   <textarea class="form-control" rows="5" placeholder="Type your message here.." name="message"></textarea>
                 </div>
               </div>
-              <input hidden type="text" class="form-control" placeholder="Favorite food" name="honeypot">
-              <div class="row mb-4">
+              <input hidden type="text" class="form-control" placeholder="Favorite food" name="bot-field">
+              <div data-netlify-recaptcha="true"></div>
+              <div class="row mt-4">
                 <div class="col-md-6">
-                    <button class="g-recaptcha btn btn-primary"
-                        data-sitekey="6LfWIXMbAAAAAO_QausAHiSPcZxCnPPl0sqMV5JN"
-                        data-callback='handleFormSubmit'
-                        data-action='submit'>
+                    <button class="btn btn-primary" type="submit">
                         Send Message
                     </button>
                 </div>
-              </div>
-              <div style="display:none" class="row thankyou_message">
-                <h2>
-                    <em>Thanks</em> for your message! I will get back to you soon!
-                </h2>
               </div>
             </form>
           </div>
@@ -652,10 +648,10 @@
       "retina_detect": true
     });
 
+
 </script>
   
   <script src="js/main.js"></script>
-  <script data-cfasync="false" type="text/javascript" src="js/form-submission-handler.js"></script>
     
   </body>
 </html>
